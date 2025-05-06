@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CARP Project</title>
+  <link rel="stylesheet" href="assets/style.css" />
+</head>
+<body>
+
+  <header>
+  <img src="static/CARP.png" alt="CARP Logo" style="height: 80px; display: block; margin: 0 auto 1em auto;" />
+    <h1>The CARP Project</h1>
+  </header>
+
+  <nav>
+    <a href="#about">About</a>
+    <a href="#how">How does it work</a>
+    <a href="#faq">FAQ</a>
+    <a href="#links">Links</a>
+    <a href="#gallery">Gallery</a>
+  </nav>
+
+  <section id="about">
+    <h2>About</h2>
+    <p>CARP is a community-powered reward system for carp anglers. Members post pictures of their best catches on our Discord – including the weight in pounds – and receive CARP tokens in return. It's all about fun, sharing, and celebrating impressive fish!</p>
+  </section>
+
+  <section id="how">
+    <h2>How does it work</h2>
+    <p>Once you join our Discord server, everything is handled by the CARP bot. You get an automatic wallet address and can interact using simple slash commands like <code>/tip</code>, <code>/send</code>, or <code>/redeem</code>. CARPs are distributed based on the weight of the carp you post. These tokens can then be tipped to others, redeemed for special perks, or used in community raffles and events.</p>
+  </section>
+
+  <section id="faq">
+    <h2>FAQ</h2>
+    <p><strong>Do I need to install anything?</strong><br/>Nope! All you need is Discord. The CARP bot handles everything for you. Optionally, you can also check your balance and transactions in our Web Wallet or the Explorer.</p>
+    <p><strong>Can I buy CARP?</strong><br/>No. CARP is not for sale. It’s a utility token you earn by sharing photos of your real carp catches.</p>
+    <p><strong>What can I do with my CARPs?</strong><br/>
+You can tip other anglers, send CARP to friends, or redeem it for other cryptocurrencies.  
+Currently, CARP can be redeemed for <a href="https://litecoin.org" target="_blank"><strong>LTC</strong></a> (a popular coin and long-term investment) or  
+<a href="https://vecocoin.com" target="_blank"><strong>VECO</strong></a> (an ultra-low-fee coin perfect for micro-transactions).  
+More features like raffles are coming soon!</p>
+  </section>
+
+  <section id="links">
+    <h2>Links</h2>
+    <ul>
+      <li><a href="https://discord.gg/uCfASwEcAw" target="_blank">Join CARP on Discord</a></li>
+      <li><a href="https://carpwallet.vecocoin.com" target="_blank">Web Wallet</a></li>
+      <li><a href="https://carpexplorer.vecocoin.com" target="_blank">Block Explorer</a></li>
+      <li><a href="https://github.com/CARP-cook" target="_blank">GitHub</a></li>
+    </ul>
+  </section>
+
+  <section id="gallery">
+    <h2>Gallery</h2>
+    <div class="gallery" id="gallery-container">
+      <noscript>Please enable JavaScript to view the gallery.</noscript>
+    </div>
+  </section>
+
+  <script>
+    fetch("gallery/gallery.json")
+      .then(res => res.json())
+      .then(images => {
+        const container = document.getElementById("gallery-container");
+        images.forEach(filename => {
+          const img = document.createElement("img");
+          img.src = "gallery/" + filename;
+          img.alt = filename;
+          container.appendChild(img);
+        });
+      });
+  </script>
+
+</body>
+</html>
