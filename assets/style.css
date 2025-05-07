@@ -106,9 +106,8 @@ details {
 }
 
 details summary {
-  font-weight: bold;
   cursor: pointer;
-  color: #a9d6f2;
+  color: #a9d6b4;
   background: none;
   padding: 0.3em 0;
   font-size: 1.1em;
