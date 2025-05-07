@@ -63,19 +63,19 @@ More features like raffles are coming soon!</p>
     </div>
   </section>
 
-  <section id="disclaimer">
-    <details>
-    <h2>Disclaimer</h2>
+<section id="disclaimer">
+  <details>
+    <summary><strong>Disclaimer</strong></summary>
     <p>CARP is a community-based token created for recreational and entertainment purposes. It is awarded exclusively to members of our Discord community for sharing fishing-related images, particularly of their biggest catches. CARP cannot be purchased, sold, or traded on any exchange and holds no monetary value.</p>
     <p>While CARP may optionally be redeemed for small, predefined amounts of cryptocurrency (e.g., VECO or LTC), these redemptions are provided as voluntary, symbolic rewards and do not constitute a financial transaction or promise of future value. The CARP system is not an investment product, and no profits, dividends, or financial returns are associated with CARP ownership.</p>
     <p>Participation in the CARP community is entirely voluntary. By submitting content, you agree to our community guidelines and grant us the right to display submitted images in the public gallery.</p>
     <p>CARP is operated on a best-effort basis. We do not guarantee uptime, reward availability, or service continuity. The project is experimental and non-commercial. Use of CARP and participation in associated services are at your own risk.</p>
-    </details>
-  </section>
+  </details>
+</section>
 
-  <section id="tos">
-    <h2>Terms of Service</h2>
-    <details>
+<section id="tos">
+  <details>
+    <summary><strong>Terms of Service</strong></summary>
     <ol>
       <li><strong>Eligibility:</strong> You must be at least 13 years old and a member of our Discord server to use CARP services.</li>
       <li><strong>Community Participation:</strong> CARP tokens are awarded for voluntary submission of fishing-related images. Content must be original and appropriate.</li>
@@ -86,37 +86,22 @@ More features like raffles are coming soon!</p>
       <li><strong>Content Rights:</strong> By submitting images, you grant us permission to display them publicly.</li>
       <li><strong>Modifications:</strong> Terms may be updated at any time. Continued use implies acceptance.</li>
     </ol>
-    </details>
-  </section>
+  </details>
+</section>
 
-  <section id="privacy">
-    <details>
-    <h2>Privacy Notice</h2>
+<section id="privacy">
+  <details>
+    <summary><strong>Privacy Notice</strong></summary>
     <p><strong>Data We Collect:</strong> Your Discord username and ID, submitted images, and wallet data (stored locally).</p>
     <p><strong>How We Use It:</strong> To assign CARP fairly, manage the gallery, and enable tipping and redemptions.</p>
     <p><strong>Data Sharing:</strong> We do not sell or share your data. Submitted images may be displayed publicly with credit.</p>
     <p><strong>Storage & Security:</strong> Data is stored securely on our server. We take reasonable precautions but cannot guarantee absolute security.</p>
     <p><strong>Your Rights:</strong> You may request deletion of your data or images via Discord at any time.</p>
     <p><strong>Changes:</strong> This privacy notice may be updated. Major changes will be announced on Discord.</p>
-    </details>
-  </section>
+  </details>
+</section>
 
-  <script>
-    fetch("gallery/gallery.json")
-      .then(res => res.json())
-      .then(images => {
-        const container = document.getElementById("gallery-container");
-        images.forEach(filename => {
-          const img = document.createElement("img");
-          img.src = "gallery/" + filename;
-          img.alt = filename;
-          container.appendChild(img);
-        });
-      });
-  </script>
-
-
-    <footer style="text-align: center; margin: 2em 0; font-size: 0.8em; color: gray;">
+<footer style="text-align: center; margin: 2em 0; font-size: 0.8em; color: gray;">
   <p>
     <a href="#disclaimer">Disclaimer</a> •
     <a href="#tos">Terms of Service</a> •
