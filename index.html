@@ -109,6 +109,20 @@ More features like raffles are coming soon!</p>
   </p>
   <p>© 2025 CARP Community Project – No monetary value • No investment • Just fishing fun</p>
 </footer>
+
+<script>
+  fetch("gallery/gallery.json")
+    .then(res => res.json())
+    .then(images => {
+      const container = document.getElementById("gallery-container");
+      images.forEach(filename => {
+        const img = document.createElement("img");
+        img.src = "gallery/" + filename;
+        img.alt = filename;
+        container.appendChild(img);
+      });
+    });
+</script>
   
 </body>
 </html>
