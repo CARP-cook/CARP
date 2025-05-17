@@ -14,8 +14,8 @@
     Your browser does not support the video tag.
   </video>
   <div class="header-content">
-    <img src="static/CARP.png" alt="CARP Logo" style="height: 120px; display: block; margin: 0 auto 1em auto;" />
     <h1>CARP Rewards</h1>
+    <img src="static/CARP.png" alt="CARP Logo" style="height: 90px; display: block; margin: 0 auto 6em auto;" />
   </div>
 </header>
 
@@ -145,9 +145,9 @@ More features like raffles are coming soon!</p>
   $(document).ready(function () {
   $("section.ripple-background").ripples({
     resolution: 256,
-    perturbance: 0.2,
-    dropRadius: 30,
-    dropFrequency: 5,   // nicht nötig bei interactive: false
+    perturbance: 0.4,
+    dropRadius: 20,
+    dropFrequency: 6,   // nicht nötig bei interactive: false
     interactive: true
   });
 
@@ -156,8 +156,8 @@ More features like raffles are coming soon!</p>
     function randomDrop() {
       const x = Math.random() * $el.width();
       const y = Math.random() * $el.height();
-      $el.ripples("drop", x, y, 25, 0.2);
-      const delay = 3000 + Math.random() * 2000; // 2–4s
+      $el.ripples("drop", x, y, 20, 0.4);
+      const delay = 4000 + Math.random() * 2000; // 2–4s
       setTimeout(randomDrop, delay);
     }
     randomDrop();
