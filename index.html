@@ -8,10 +8,16 @@
 </head>
 <body>
 
-  <header>
-    <img src="static/CARP.png" alt="CARP Logo" style="height: 80px; display: block; margin: 0 auto 1em auto;" />
+<header class="video-header">
+  <video autoplay muted loop playsinline>
+    <source src="static/header-video.mp4" type="video/mp4" />
+    Your browser does not support the video tag.
+  </video>
+  <div class="header-content">
+    <img src="static/CARP.png" alt="CARP Logo" style="height: 120px; display: block; margin: 0 auto 1em auto;" />
     <h1>CARP Rewards</h1>
-  </header>
+  </div>
+</header>
 
   <nav>
     <a href="#about">About</a>
@@ -21,17 +27,17 @@
     <a href="#gallery">Gallery</a>
   </nav>
 
-  <section id="about">
+  <section class="ripple-background" id="about">
     <h2>About</h2>
     <p>CARP is a community-powered reward system for carp anglers. Members post pictures of their best catches on our Discord – including the weight in pounds – and receive CARP tokens in return. It's all about fun, sharing, and celebrating impressive fish!</p>
   </section>
 
-  <section id="how">
+  <section class="ripple-background" id="how">
     <h2>How does it work</h2>
     <p>Once you join our <a href="https://discord.gg/U7HrcXwHc7" target="_blank"><strong>Discord server</strong></a>, everything is handled by the CARP bot. You get an automatic wallet address and can interact using simple slash commands like <code>/tip</code>, <code>/send</code>, or <code>/redeem</code>. CARPs are distributed based on the weight of the carp you post. These tokens can then be tipped to others, redeemed for special perks, or used in community raffles and events.</p>
   </section>
 
-  <section id="faq">
+  <section class="ripple-background" id="faq">
     <h2>FAQ</h2>
     <p><strong>Do I need to install anything?</strong><br/>For CARP, all you need is Discord. The CARP bot handles everything for you. Optionally, you can also check your balance and transactions in the  <a href="https://carpwallet.vecocoin.com" target="_blank"><strong>CARP Web Wallet</strong></a> or the <a href="https://carpexplorer.vecocoin.com" target="_blank"><strong>CARP Explorer</strong></a>. There are several wallets available for Litecoin, e.g. the Litewallet app for mobile phones or Electrum for desktop computers. For VECO you can use the web wallet or install a node on your PC. For more information check out the links below.</p>
     <p><strong>Can I buy CARP?</strong><br/>CARP is not for sale. It’s a utility token you earn by sharing photos of your real carp catches.</p>
@@ -43,7 +49,7 @@ More features like raffles are coming soon!</p>
     <p><strong>Note on redemptions:</strong> CARP redemptions are optional and limited. A maximum of 3 million CARP per user can currently be earned monthly via image submissions, equivalent to <span id="carp-gbp-rate">≈£4</span> at current <a href="https://www.coingecko.com/en/coins/veco" target="_blank"><strong>VECO rates</strong></a>. Redemptions are handled via an automated API and processed only if sufficient funds are available on the system’s minimal hot wallets. These wallets are distinct from the main treasury. CARP staff retain no obligation to fulfill redemptions and may adjust the process for security or availability reasons.</p>
   </section>
 
-  <section id="links">
+  <section class="ripple-background" id="links">
     <h2>Links</h2>
     <ul>
       <li><a href="https://discord.gg/U7HrcXwHc7" target="_blank">Join CARP on Discord</a></li>
@@ -131,6 +137,32 @@ More features like raffles are coming soon!</p>
         carpText.textContent = `≈£${equivalent}`;
       }
     });
+</script>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://unpkg.com/jquery.ripples/dist/jquery.ripples-min.js"></script>
+<script>
+  $(document).ready(function () {
+  $("section.ripple-background").ripples({
+    resolution: 256,
+    perturbance: 0.2,
+    dropRadius: 30,
+    dropFrequency: 5,   // nicht nötig bei interactive: false
+    interactive: true
+  });
+
+  $("section.ripple-background").each(function () {
+    const $el = $(this);
+    function randomDrop() {
+      const x = Math.random() * $el.width();
+      const y = Math.random() * $el.height();
+      $el.ripples("drop", x, y, 25, 0.2);
+      const delay = 3000 + Math.random() * 2000; // 2–4s
+      setTimeout(randomDrop, delay);
+    }
+    randomDrop();
+  });
+  });
 </script>
   
 </body>
