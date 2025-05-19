@@ -180,13 +180,21 @@
 <script>
   fetch("gallery/gallery-partners.json")
     .then(res => res.json())
-    .then(images => {
+    .then(partners => {
       const container = document.getElementById("partners-gallery");
-      images.forEach(filename => {
+      partners.forEach(({ filename, link }) => {
+        const anchor = document.createElement("a");
+        anchor.href = link;
+        anchor.target = "_blank";
+        anchor.rel = "noopener noreferrer";
+
         const img = document.createElement("img");
         img.src = "gallery/partners/" + filename;
         img.alt = filename;
-        container.appendChild(img);
+        img.classList.add("partner-logo");
+
+        anchor.appendChild(img);
+        container.appendChild(anchor);
       });
     });
 </script>
