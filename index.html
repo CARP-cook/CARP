@@ -25,6 +25,7 @@
     <a href="#how">How does it work</a>
     <a href="#faq">FAQ</a>
     <a href="#links">Resources</a>
+    <a href="#partners">Partners</a>
     <a href="#gallery">Gallery</a>
   </nav>
 
@@ -107,6 +108,13 @@
 
 </section>
 
+  <section class="ripple-background" id="partners">
+    <h2>Our Partners</h2>
+    <div class="gallery" id="partners-gallery">
+      <noscript>Please enable JavaScript to view the partner gallery.</noscript>
+    </div>
+  </section>
+
   <section class="ripple-background" id="gallery">
     <h2>Gallery</h2>
     <div class="gallery" id="gallery-container">
@@ -170,6 +178,19 @@
     });
 </script>
 <script>
+  fetch("gallery/gallery-partners.json")
+    .then(res => res.json())
+    .then(images => {
+      const container = document.getElementById("partners-gallery");
+      images.forEach(filename => {
+        const img = document.createElement("img");
+        img.src = "gallery/partners/" + filename;
+        img.alt = filename;
+        container.appendChild(img);
+      });
+    });
+</script>
+<script>
   fetch("https://api.coingecko.com/api/v3/simple/price?vs_currencies=gbp&ids=veco")
     .then(res => res.json())
     .then(data => {
@@ -190,7 +211,7 @@
     resolution: 256,
     perturbance: 0.4,
     dropRadius: 20,
-    dropFrequency: 6,   // nicht nötig bei interactive: false
+    dropFrequency: 6,  
     interactive: true
   });
 
@@ -200,7 +221,7 @@
       const x = Math.random() * $el.width();
       const y = Math.random() * $el.height();
       $el.ripples("drop", x, y, 20, 0.4);
-      const delay = 4000 + Math.random() * 2000; // 2–4s
+      const delay = 4000 + Math.random() * 2000;
       setTimeout(randomDrop, delay);
     }
     randomDrop();
