@@ -112,20 +112,6 @@ code {
   font-family: monospace;
 }
 
-.gallery img {
-  max-width: 100%;
-  height: auto;
-  margin-bottom: 1rem;
-  border-radius: 8px;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.5);
-  color: #a9d6b4;
-}
-
-#partners-gallery img {
-  object-fit: contain;
-  background-color: #000;
-}
-
 details {
   background: #0f1e1e;
   border-radius: 8px;
@@ -157,6 +143,16 @@ details summary {
   height: 100%;
   object-fit: cover;
   display: block;
+}
+
+#partners-gallery img {
+  object-fit: contain;
+  background-color: #000;
+}
+
+#partners-gallery a:hover img {
+  transform: scale(1.05);
+  transition: transform 0.3s ease;
 }
 
 footer {
