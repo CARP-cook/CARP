@@ -121,6 +121,11 @@ code {
   color: #a9d6b4;
 }
 
+#partners-gallery img {
+  object-fit: contain;
+  background-color: #000;
+}
+
 details {
   background: #0f1e1e;
   border-radius: 8px;
