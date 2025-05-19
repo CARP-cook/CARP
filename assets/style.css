@@ -133,8 +133,8 @@ details summary {
 
 .gallery {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-  grid-auto-rows: 240px; /* yields approx. 4:3 ratio */
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  grid-auto-rows: 240px; /* yields approx. 1:1 ratio */
   gap: 0;
 }
 
