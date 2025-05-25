@@ -103,7 +103,7 @@
 
   <details>
     <summary><strong>Note on redemptions:</strong></summary>
-    <p>CARP redemptions are optional and limited. Community members can submit up to 3 catch photos per month, with a maximum reward of 3 million CARP per fish – even if it weighs more than 30 lbs. That means you can currently earn up to 9 million CARP per month from image submissions, which is about <span id="carp-gbp-rate">≈£4</span> at current <a href="https://www.coingecko.com/en/coins/veco" target="_blank"><strong>VECO rates</strong></a>. Redemptions are handled via an automated API and processed only if sufficient funds are available on the system’s minimal hot wallets. These wallets are distinct from the main treasury. CARP staff retain no obligation to fulfill redemptions and may adjust the process for security or availability reasons.</p>
+    <p>CARP redemptions are optional and limited. Each member can submit up to 3 catch photos per month: One fish can weigh up to 30 lbs and two must be under 20 lbs That means you can currently earn about 7 million CARP per month from image submissions, which is about <span id="carp-gbp-rate">≈£4</span> at current <a href="https://www.coingecko.com/en/coins/veco" target="_blank"><strong>VECO rates</strong></a>. Redemptions are handled via an automated API and processed only if sufficient funds are available on the system’s minimal hot wallets. These wallets are distinct from the main treasury. CARP staff retain no obligation to fulfill redemptions and may adjust the process for security or availability reasons.</p>
   </details>
 
 </section>
@@ -205,7 +205,7 @@
       const price = data.veco.gbp;
       const carpText = document.getElementById("carp-gbp-rate");
       if (price && carpText) {
-        const equivalent = (price * 9000).toFixed(1);
+        const equivalent = (price * 7000).toFixed(1);
         carpText.textContent = `≈£${equivalent}`;
       }
     });
