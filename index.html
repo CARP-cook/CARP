@@ -97,6 +97,13 @@
       <noscript>Please enable JavaScript to view the gallery.</noscript>
     </div>
   </section>
+
+    <section class="ripple-background" id="prizes">
+    <h2>Previous Giveaways & Raffles</h2>
+    <div class="gallery" id="prize-container">
+      <noscript>Please enable JavaScript to view the gallery.</noscript>
+    </div>
+  </section>
   
   <details>
   <summary><strong>Disclaimer</strong></summary>
@@ -145,6 +152,19 @@
       images.forEach(filename => {
         const img = document.createElement("img");
         img.src = "gallery/" + filename;
+        img.alt = filename;
+        container.appendChild(img);
+      });
+    });
+</script>
+<script>
+  fetch("gallery/gallery-prizes.json")
+    .then(res => res.json())
+    .then(images => {
+      const container = document.getElementById("prize-container");
+      images.forEach(filename => {
+        const img = document.createElement("img");
+        img.src = "gallery/prizes/" + filename;
         img.alt = filename;
         container.appendChild(img);
       });
